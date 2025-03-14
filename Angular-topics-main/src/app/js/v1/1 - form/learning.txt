@@ -1,0 +1,42 @@
+1->     form.addEventListener('submit', function(e){}
+
+2->     const form = document.getElementById('form');
+
+3->     const formControl = input.parentElement;
+        formControl.className = 'form-control error';
+        const small = formControl.querySelector('small');
+
+
+
+
+
+
+
+https://www.udemy.com/course/javascript-web-projects-to-build-your-portfolio-resume/
+
+        1-TO Do ---------
+        2-Auto suggest in api call using debounce, typeahead ---------
+        3-Carousal  ----------
+        4-Tree like folder and files structure (not important)
+        5-Multi level comment
+        6-Drag and drop (trello)
+        7-Event scheduler (google calander)        
+        8-tic tac toe --------
+        
+
+        ->How would you make sure while appending children to DOM, you do not reconstruct the DOM? document.createFragment is the way to go. Make sure to use it.
+        ->document.querySelector over document.getElementById . And you should know why.
+
+
+
+
+
+
+
+
+
+
+
+        css 
+        1->  transform: translate(-100%, -50%);
+  transition: opacity 0.3s ease; (vvimp)

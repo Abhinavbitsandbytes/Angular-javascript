@@ -1,0 +1,80 @@
+
+:root{
+    --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    --income-color:#2ecc71; 
+    --expense-color: #c0392b;
+}
+body {
+  background-color: #f7f7f7;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.container{
+width: 350px;
+}
+.container h2{
+    text-align: center;
+}
+.card-container{
+    box-shadow: var(--box-shadow);
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+    font-size: 18px;
+    text-align: center;
+}
+.income-amount{
+    color: var(--income-color);
+}
+.expense-amount{
+    color: var(--expense-color);
+}
+form input{
+    width: 100%;
+    padding: 8px 0px;
+    margin-bottom: 6px;
+    outline: none;
+}
+form button{
+    width: 100%;
+    padding: 8px 0px;
+    cursor: pointer;
+    background-color: #9c88ff;
+    border: none;
+    box-shadow: var(--box-shadow);
+}
+.plus{
+    border-right: 2px solid var(--income-color);
+}
+.minus{
+    border-right: 2px solid var(--expense-color);
+}
+li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 8px;
+    position: relative;
+}
+li ul{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    padding: 20px 8px;
+}
+
+.remove-btn{
+    position: absolute;
+    left: -28px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+ul:hover .remove-btn{
+    opacity: 1;
+}

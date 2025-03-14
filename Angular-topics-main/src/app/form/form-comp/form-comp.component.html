@@ -1,0 +1,13 @@
+<form [formGroup]='loginForm'  class="form">
+    <input formControlName='email' type="text" class="form-control" placeholder="Enter Email" />
+    <input formControlName='password' type="password" class="form-control" placeholder="Enter Password" />
+    <select formControlName="role" class="form-control">
+        <option value="" disabled>Select Role</option>
+        <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+      </select>
+        <div class="form-check">
+        <input formControlName="agreeTerms" type="checkbox" class="form-check-input" />
+        <label class="form-check-label">I agree to the terms and conditions</label>
+      </div>
+</form>
+<button (click)="handleSubmit()">Submit</button>

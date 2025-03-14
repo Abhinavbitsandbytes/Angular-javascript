@@ -1,0 +1,2 @@
+const timeInterval = setInterval(updateTime, 1000);
+ clearInterval(timeInterval);

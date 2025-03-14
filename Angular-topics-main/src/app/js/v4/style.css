@@ -1,0 +1,17 @@
+
+.seats-container{
+    display: flex;
+}
+.seat{
+    width: 20px;
+    height: 20px;
+    background-color: blue;
+    margin: 20px;
+    cursor: pointer;
+}
+.occupied{
+    background-color: pink;
+}
+.booked{
+    background-color: green;
+}

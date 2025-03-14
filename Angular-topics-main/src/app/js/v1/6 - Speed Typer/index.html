@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="difficulty-container">
+    <label for="difficulty">Difficulty</label>
+    <select name="difficulty" id="difficulty">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+    </select>
+</div>
+
+<div class="main-content">
+    <h1>Speed Typer</h1>
+
+    <div class="info-container">
+        <p>
+            Time Left: <span id="time-left"></span>
+        </p>
+        <p>
+            Score: <span id="score">0</span>
+        </p>
+    </div>
+    <p class="info-text">Type the following:</p>
+    <h1 id="random-word"></h1>
+    <div class="input-container">
+    <input placeholder="Type word here" id="input-word">
+    </div>
+
+</div>
+
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

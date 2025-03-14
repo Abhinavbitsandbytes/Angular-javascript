@@ -1,0 +1,25 @@
+.container{
+    background: cornflowerblue;
+        height: 300px;
+        text-align: center;
+    }
+.seat{
+        width: 12px;
+        height: 12px;
+        background: blue;
+        margin: 10px;
+        cursor: pointer;
+}
+
+.seat.occupied{
+    background: white;
+    cursor: default;
+}
+
+.seat.selected{
+    background: yellow;
+}
+
+.row{
+    display: flex;
+}

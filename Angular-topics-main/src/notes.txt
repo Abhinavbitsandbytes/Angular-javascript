@@ -1,0 +1,12 @@
+
+else if in html
+
+<div *ngIf="condition; else elseTemplate">
+  <!-- Content to display when condition is true -->
+  <p>The condition is true!</p>
+</div>
+
+<ng-template #elseTemplate>
+  <!-- Content to display when condition is false -->
+  <p>The condition is false!</p>
+</ng-template>

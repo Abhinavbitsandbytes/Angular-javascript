@@ -1,0 +1,17 @@
+<div class="typeahead">
+    <input
+      type="text"
+      [formControl]="searchControl"
+      placeholder="Search..."
+      autocomplete="off"
+    />
+    <ul *ngIf="suggestions.length > 0" class="suggestions-list">
+      <li
+        *ngFor="let suggestion of suggestions"
+        (click)="selectItem(suggestion)"
+      >
+        {{ suggestion }}
+      </li>
+    </ul>
+  </div>
+  

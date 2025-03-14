@@ -1,0 +1,19 @@
+
+
+<input type="text" placeholder="search" [(ngModel)]="nameSearch"/>
+
+<table>
+    <tr>
+        <th>Product name</th>
+        <th>Price</th>
+        <th>Availability</th>
+    </tr>
+    <tr *ngFor="let product of productArr | filter: nameSearch">
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+        <td>product.availability</td>
+    </tr>
+
+</table>
+
+<!-- https://www.youtube.com/watch?v=uUQfi1-g92Q -->

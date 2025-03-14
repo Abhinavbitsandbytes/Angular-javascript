@@ -1,0 +1,12 @@
+<div class="stopwatch">
+    <div class="timer-display" (click)="toggleStartStop()">
+      {{ formatTime() }}
+    </div>
+    <div class="buttons">
+      <button (click)="toggleStartStop()">
+        {{ isRunning ? 'Stop' : 'Start' }}
+      </button>
+      <button (click)="resetTimer()">Reset</button>
+    </div>
+  </div>
+  

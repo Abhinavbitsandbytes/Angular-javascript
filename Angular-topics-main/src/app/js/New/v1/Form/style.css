@@ -1,0 +1,7 @@
+.form-control small{
+    display: none;
+}
+
+.form-control.error small{
+    display: inline;
+}

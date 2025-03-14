@@ -1,0 +1,40 @@
+.container{
+    display: flex;
+    height:  calc(60vh + 8px);
+    width: 800px;
+}
+.left-container{
+    background-color: pink;
+    width: 30%;
+    border-right: 4px solid yellow;
+}
+.right-container {
+    background-color: yellow;
+    width: 70%;
+}
+
+.row1{
+    background-color: green;
+    height: 20vh;
+    border-bottom: 4px solid yellow;
+}
+.row2 {
+    background-color: blueviolet;
+    height: 20vh;
+    display: flex;
+}
+.row3 {
+    background-color: lightgrey;
+    height: 20vh;
+}
+.row2c1{
+    width: 50%;
+    background-color: brown;
+
+}
+.row2c2{
+    width: 50%;
+    background-color: lightseagreen;
+
+}
+

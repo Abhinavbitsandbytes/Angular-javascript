@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Expense Tracker</h2>
+        <p>Your Balance</p>
+        <p id="total-balance"></p>
+        <div class="card-container">
+            <div class="income-card">
+                <p>Income</p>
+                <p id="income-amount" class="income-amount"></p>
+            </div>
+            <div class="expense-card">
+                <p>Expense</p>
+                <p id="expense-amount" class="expense-amount"></p>
+            </div>
+        </div>
+        <p>History</p>
+        <div id="trans-list"></div>
+        <p>Add new transaction</p>
+        <hr>
+        <form id="form">
+        <input id="message" type="text" placeholder="Enter text">
+        <input id="amount" type="number" placeholder="Enter amount">
+        <button id="add-trans">Add Transaction</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

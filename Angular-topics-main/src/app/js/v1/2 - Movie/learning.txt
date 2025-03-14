@@ -1,0 +1,17 @@
+1-  const seats = document.querySelectorAll('.row .seat:not(.occupied)');
+
+2-   const selectedSeats = document.querySelectorAll('.row .seat.selected')
+    // only required for local storage in this que
+    const seatsIndex = [...selectedSeats].map(seat => [...seats].indexOf(seat));
+
+3-  movies.addEventListener('change', e=>{
+    ticketPrice = e.target.value;
+    updateSelectedCount();
+})
+
+4-  container.addEventListener('click', e =>{
+    if(e.target.classList.contains('seat') && !e.target.classList.contains('occupied')){
+        e.target.classList.toggle('selected');
+
+    }
+})

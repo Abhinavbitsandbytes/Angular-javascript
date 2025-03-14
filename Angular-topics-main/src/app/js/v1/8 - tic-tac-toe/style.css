@@ -1,0 +1,29 @@
+.container {
+    width: 200px;
+}
+
+.row {
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+}
+
+.box {
+    width: 33.33%;
+    height: 60px;
+    border-right: 1px solid;
+    text-align: center;
+    border-bottom: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+}
+
+.b-0 {
+    border-bottom: none;
+}
+
+.r-0 {
+    border-right: none;
+}

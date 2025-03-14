@@ -1,0 +1,32 @@
+component communication -----------
+Difference between constructor and ngOnInit
+Directives     --------
+Pure vs impure pipes
+Reactive forms
+Lazy loading
+Annotations and decorators
+What will come inside Declarations, imports and providers
+Differential loading
+Angular lifecycle
+Package.json
+Why do we use Dependency Injection instead of creating an object
+Http interceptor
+AOT and JIT
+Everything you need to know about <ng-template>, <ng-content>, <ng-container> and *ngTemplateOutlet in Angular  ------
+Content projection  ---------
+View Child and View Children  -----------
+Content child and content children  ------
+Change Detection -------
+Route Guards and Role management  --------
+Difference between canActivate and canLoad?
+Is service a singleton object?
+MultiCasting  -------------
+Host Listener  ---------
+Pre Loading Strategy
+View Encapsulation  -----------
+rxjs subject,  behaviour subject, action replay, switch map, merge map, concat map, fork join)  ---------------
+service in Angular 14 | singleton vs multiple  ------
+ProvidedIn in service
+How to use the interface in angular?  ----------
+Unsubscribe in angular   ------- 
+Difference between observable and subject --------- 

@@ -1,0 +1,12 @@
+ <div class="meal-name" data-mealId=${item.idMeal}> ${item.strMeal}</div>   set data attributes
+
+
+2-> (get data attribute)  
+
+let mealInfo = '';
+     e.path.find(item => {
+         if (item.classList && item.classList.contains('meal-name') ) {
+            mealInfo=item
+        }})
+    
+    const mealID = mealInfo.getAttribute('data-mealId');

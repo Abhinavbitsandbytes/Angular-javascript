@@ -1,0 +1,9 @@
+body{
+    /* background: #2d2013; */
+}
+.meal-img{
+    width: 150px;
+    height: 150px;
+    margin-right: 8px;
+    cursor: pointer;
+}

@@ -1,0 +1,32 @@
+.container {
+   background: brown;
+   margin: 30px 30px;
+    
+}
+.header{
+    text-align: center;
+}
+.title{
+    font-size: 20px;
+    font-weight: bolder;
+    color: #ffffff;
+}
+.search-container{
+    display: flex;
+}
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card{
+    border: 2px solid;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    cursor: pointer;
+
+}
+.card img{
+    width:inherit;
+    height: 180px;
+}

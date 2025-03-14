@@ -1,0 +1,17 @@
+.grid {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.row {
+    display: flex;
+}
+
+.cell {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    border: 1px solid #ccc;
+}
