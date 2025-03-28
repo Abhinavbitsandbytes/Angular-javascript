@@ -42,3 +42,47 @@
 // // https://medium.com/geekculture/understanding-javascript-maps-and-sets-ca31a9bf40da
 
 
+
+
+
+
+
+//  When to Use What?
+// ✅ Use Map when:
+
+// You need non-string keys (e.g., objects, functions).
+// You need guaranteed key order.
+// You frequently add or remove key-value pairs.
+// Performance is critical.
+// Doesn't inherit from Object.prototype, so no risk of prototype pollution
+
+
+// ✅ Use Object when:
+
+// You need a simple key-value store with string keys.
+// You want to serialize the data easily.
+// The object structure is fixed and doesn't change often.
+// Inherits from Object.prototype, which can lead to accidental key conflicts
+
+
+// Map example
+
+// const myMap = new Map();
+// myMap.set('name', 'Alice');
+// myMap.set(1, 'One');
+// myMap.set({ key: 'value' }, 'Object Key');
+
+// console.log(myMap.get(1)); // "One"
+// console.log(myMap.size); // 3
+// console.log([...myMap.keys()]); // ['name', 1, { key: 'value' }]
+
+// object example
+// const myObj = { name: 'Alice' };
+// myObj[1] = 'One'; // Key is automatically converted to a string
+
+// console.log(myObj[1]); // "One"
+// console.log(Object.keys(myObj)); // ["name", "1"]
+
+
+
+

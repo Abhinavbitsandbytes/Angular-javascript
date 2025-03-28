@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostBinding, HostListener } from '@angular/core';
+import { Directive, ElementRef, HostBinding, HostListener, Input } from '@angular/core';
 
 @Directive({
   selector: '[appMydirective]'
@@ -42,3 +42,45 @@ export class MydirectiveDirective {
   }
 
 }
+
+// -------------------------
+// way to pass input color
+
+// import { Directive, ElementRef, HostBinding, HostListener, Input, OnInit } from '@angular/core';
+
+// @Directive({
+//   selector: '[appMydirective]'
+// })
+// export class MyDirective implements OnInit {
+//   @Input('appMydirective') defaultColor: string = 'yellow'; // Accept input
+//   @Input() hoverColor: string = 'green'; // Accept hover color
+//   @Input() clickColor: string = 'red'; // Accept click color
+
+//   @HostBinding('style.background') color: string = '';
+
+//   constructor(private element: ElementRef) {}
+
+//   ngOnInit() {
+//     this.color = this.defaultColor;
+//   }
+
+//   @HostListener('click') onClick() {
+//     this.color = this.clickColor;
+//   }
+
+//   @HostListener('mouseenter') onEnter() {
+//     this.color = this.hoverColor;
+//   }
+
+//   @HostListener('mouseleave') onLeave() {
+//     this.color = this.defaultColor;
+//   }
+// }
+
+
+// -------------------
+// html
+
+// <p>dir-component  
+//   <span appMydirective="lightblue" hoverColor="orange" clickColor="red">Hover or Click Me!</span>
+// </p>

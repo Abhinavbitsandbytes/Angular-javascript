@@ -1,6 +1,7 @@
 
-function getData(){
-    console.log('fetching data from api...')
+function getData(...p){
+    console.log('fetching data from api...');
+    console.log(p)
 }
 function doSomeMagic(fn, d){
     let timer;
@@ -14,6 +15,7 @@ function doSomeMagic(fn, d){
 }
 }
 const betterFunction = doSomeMagic(getData, 700)
+betterFunction("Ggg", "ggggtfd")
 
 
 

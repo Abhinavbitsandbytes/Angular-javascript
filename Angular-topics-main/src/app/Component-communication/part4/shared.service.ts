@@ -14,6 +14,8 @@ export class SharedService {
   }
 }
 
+// A plain Observable (without Subject or BehaviorSubject) won't work because it doesn't support .next().
+
 // The line currentMessage = this.messageSource.asObservable(); is crucial for encapsulating the behavior of the BehaviorSubject
 // (messageSource) and exposing it as a read-only observable stream. Here's a breakdown of why this is done:
 

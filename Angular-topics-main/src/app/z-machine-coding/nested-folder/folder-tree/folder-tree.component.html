@@ -1,0 +1,14 @@
+<ul>
+    <li *ngFor="let item of data">
+      <span *ngIf="item.type === 'folder'" (click)="toggle(item.name)">
+        📂 {{ item.name }} ({{ expanded[item.name] ? '-' : '+' }})
+      </span>
+  
+      <span *ngIf="item.type === 'file'">📄 {{ item.name }}</span>
+  
+      <!-- Recursively render subfolders if expanded -->
+      <ul *ngIf="item.type === 'folder' && expanded[item.name]">
+        <app-folder-tree [data]="item.children"></app-folder-tree>
+      </ul>
+    </li>
+  </ul>

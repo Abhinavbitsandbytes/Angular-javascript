@@ -33,6 +33,8 @@ import { SiblingTwoComponent } from './Component-communication/part4/sibling-two
 import { Parent4Component } from './Component-communication/part4/parent4/parent4.component';
 import { ObservableComponent } from './Observable-Subject/observable/observable.component';
 import { Observable2Component } from './Observable-Subject/observable2/observable2.component';
+import { NestedFolderParentComponent } from './z-machine-coding/nested-folder/nested-folder-parent/nested-folder-parent.component';
+import { FolderTreeComponent } from './z-machine-coding/nested-folder/folder-tree/folder-tree.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,9 @@ import { Observable2Component } from './Observable-Subject/observable2/observabl
     SiblingTwoComponent,
     Parent4Component,
     ObservableComponent,
-    Observable2Component
+    Observable2Component,
+    NestedFolderParentComponent,
+    FolderTreeComponent
   ],
   imports: [
     BrowserModule,
