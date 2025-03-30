@@ -1,0 +1,19 @@
+.star-container {
+    display: flex;
+    gap: 5px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .star-container span {
+    color: gray;
+  }
+  
+  .filled {
+    color: gold;
+  }
+
+  .star-container span.filled {
+    color: gold;
+  }
+  

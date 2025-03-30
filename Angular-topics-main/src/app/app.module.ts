@@ -26,7 +26,7 @@ import { Subject2Component } from './subject/subject2/subject2.component';
 import { GridComponent } from './grid/grid.component';
 import { FormArrayComponent } from './form-array/form-array.component';
 import { TrackbyComponent } from './trackby/trackby.component';
-import { TypeaheadComponent } from './typeahead/typeahead.component';
+import { TypeaheadComponent } from './z-machine-coding/typeahead/typeahead.component';
 import { StopwatchComponent } from './stopwatch/stopwatch.component';
 import { SiblingOneComponent } from './Component-communication/part4/sibling-one/sibling-one.component';
 import { SiblingTwoComponent } from './Component-communication/part4/sibling-two/sibling-two.component';
@@ -35,6 +35,16 @@ import { ObservableComponent } from './Observable-Subject/observable/observable.
 import { Observable2Component } from './Observable-Subject/observable2/observable2.component';
 import { NestedFolderParentComponent } from './z-machine-coding/nested-folder/nested-folder-parent/nested-folder-parent.component';
 import { FolderTreeComponent } from './z-machine-coding/nested-folder/folder-tree/folder-tree.component';
+import { GameBoardComponent } from './z-machine-coding/tic-tac-toe/game-board/game-board.component';
+import { Wh1Component } from './z-machine-coding/white-label/wh1/wh1.component';
+import { Wh2Component } from './z-machine-coding/white-label/wh2/wh2.component';
+import { CarouselComponent } from './z-machine-coding/carousel/carousel/carousel.component';
+import { CarouselParentComponent } from './z-machine-coding/carousel/carousel-parent/carousel-parent.component';
+import { StarRatingComponent } from './z-machine-coding/star-rating/star-rating.component';
+import { ProgressBarComponent } from './z-machine-coding/progress-bar/progress-bar.component';
+import { DarkThemeComponent } from './z-machine-coding/dark-theme/dark-theme.component';
+import { ParentPaginationComponent } from './z-machine-coding/pagination/parent-pagination/parent-pagination.component';
+import { PaginationComponent } from './z-machine-coding/pagination/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +77,17 @@ import { FolderTreeComponent } from './z-machine-coding/nested-folder/folder-tre
     ObservableComponent,
     Observable2Component,
     NestedFolderParentComponent,
-    FolderTreeComponent
+    FolderTreeComponent,
+    GameBoardComponent,
+    Wh1Component,
+    Wh2Component,
+    CarouselComponent,
+    CarouselParentComponent,
+    StarRatingComponent,
+    ProgressBarComponent,
+    DarkThemeComponent,
+    ParentPaginationComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +95,6 @@ import { FolderTreeComponent } from './z-machine-coding/nested-folder/folder-tre
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]

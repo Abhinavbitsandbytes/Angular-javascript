@@ -1,0 +1,14 @@
+<div>
+    <h2 *ngIf="winner">Winner: {{ winner }}</h2>
+    <h2 *ngIf="isDraw && !winner">It's a Draw!</h2>
+    <h3 *ngIf="!winner && !isDraw">Current Player: {{ currentPlayer }}</h3>
+  
+    <div *ngFor="let row of board; let rowIndex = index">
+        <button (click)="makeMove(rowIndex, colIndex)" style="margin: 10px; padding: 32px; height: 80px; width: 80px;" *ngFor="let col of row; let colIndex = index">
+            {{col}}
+        </button>
+        </div>
+  
+    <button class="reset-btn" (click)="resetGame()">Reset</button>
+  </div>
+  

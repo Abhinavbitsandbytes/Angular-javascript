@@ -45,15 +45,14 @@ export class TypeaheadComponent implements OnInit {
   }
 
   // Complex initialization with RxJS operators
-  initComplex() {
+  initComplex() { // order of operator inside pipe is imp
     this.searchControl.valueChanges
       .pipe(
         debounceTime(300),
         distinctUntilChanged(),
-        map((value) => this.filterItems(value))
       )
-      .subscribe((filteredSuggestions) => {
-        this.suggestions = filteredSuggestions;
+      .subscribe((val) => {
+        this.suggestions = this.filterItems(val);
       });
   }
 

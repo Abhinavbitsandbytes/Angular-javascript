@@ -1,0 +1,10 @@
+<div class="star-container">
+    
+    <span *ngFor="let star of [].constructor(maxStars); let i = index"
+          (click)="setRating(i + 1)"
+          (mouseover)="setHoveredStar(i + 1)"
+          (mouseleave)="clearHoveredStar()"
+           [ngClass]="{'filled': i < (hoveredStar || rating)}">
+          &#9733;
+    </span>
+  </div>

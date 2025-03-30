@@ -1,0 +1,9 @@
+<app-pagination 
+  [totalItems]="200" 
+  [pageSize]="10" 
+  (pageChange)="onPageChange($event)">
+</app-pagination>
+
+<div *ngIf="currentPageData.length">
+  <p *ngFor="let item of currentPageData">{{ item }}</p>
+</div>
