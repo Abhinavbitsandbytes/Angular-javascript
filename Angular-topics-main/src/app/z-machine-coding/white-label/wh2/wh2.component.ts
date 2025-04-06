@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-wh2',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Wh2Component implements OnInit {
 
+@Input() parentData!: string;
+@Output() btnClick = new EventEmitter();
   constructor() { }
 
-  ngOnInit(): void {
-  }
+ngOnInit(): void {
 
+  
+}
+
+handleClick(){
+this.btnClick.emit("hello from child")
+}
 }

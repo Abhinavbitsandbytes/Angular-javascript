@@ -126,6 +126,12 @@ if (typeof setInterval === 'undefined') {
 
 
 
+// reduce() and findIndex().
+
+//find, includes,
+
+
+
 
 
 

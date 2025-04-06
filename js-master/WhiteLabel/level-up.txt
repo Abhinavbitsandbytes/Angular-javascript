@@ -1,0 +1,10 @@
+1- All polyfills (call, bind, apply, promises)
+2- Custom Deep copy
+3- Object compare
+4- Learn typescript - https://www.youtube.com/watch?v=30LWjhZzg50&t=15769s
+5- CSS media querry
+
+
+
+DSA
+System design

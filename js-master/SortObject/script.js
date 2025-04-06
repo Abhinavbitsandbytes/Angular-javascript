@@ -44,3 +44,5 @@ console.log(arr);
 
 // -1 means do not swap.
 // 1 means swap.
+
+// same for java

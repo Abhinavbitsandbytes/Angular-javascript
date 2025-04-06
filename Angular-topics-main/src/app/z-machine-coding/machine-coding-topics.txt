@@ -1,23 +1,19 @@
-typeahead
-nested folfer file structures
-Tic tac toe
-Image Carousel 
-star rating
-progress-bar
-Dark Mode Toggle (Theme Switcher) 
-pagination
+typeahead - E - to do
+nested folfer file structures - E - done
+Tic tac toe - D
+Image Carousel  - D
+star rating - M
+progress-bar - E
+Dark Mode Toggle (Theme Switcher) - M
+pagination - M
 
 
 
 Tabs component
+stop watch 
+chess board with diagonal highlight
 
 Infinite Scrolling
-chess board with diagonal highlight
-stop watch 
-
-
-
-
 nested comments
 nested checkbox
 

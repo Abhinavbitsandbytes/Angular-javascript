@@ -1,7 +1,1 @@
-
-<div>
-    <input type="text" [formControl]="searchControl" placeholder="Search" />
-</div>
-<ul *ngFor="let item of suggestions; let i=index">
-{{item}}
-</ul>
+<app-wh2 [parentData]="data" (btnClick)="childHandler($event)"></app-wh2>
