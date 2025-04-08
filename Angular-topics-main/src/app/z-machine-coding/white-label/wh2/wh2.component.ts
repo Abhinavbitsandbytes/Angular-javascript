@@ -7,17 +7,17 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./wh2.component.css']
 })
 export class Wh2Component implements OnInit {
-
-@Input() parentData!: string;
-@Output() btnClick = new EventEmitter();
+  @Input() data: any
+  expanded: any = {};
   constructor() { }
-
 ngOnInit(): void {
 
   
 }
 
-handleClick(){
-this.btnClick.emit("hello from child")
+handleFolderClick(folder: any){
+  this.expanded[folder]=!this.expanded[folder]
+
 }
+
 }

@@ -10,9 +10,7 @@ export class ObservableComponent implements OnInit {
 
   observableData : any;
   subjectData: any;
-
   constructor() { }
-
   ngOnInit(): void {
   }
 
@@ -52,7 +50,8 @@ export class ObservableComponent implements OnInit {
 
 // In otherword Subjects can be both consumers and providers but Observables can't be consumer.
 
-
+// To produce data: .next()
+// To consume data: .subscribe()
 // -----------------------------2-------------------------
 
 // Observables are cold. They only emit the data when there is a subscriber.
@@ -198,6 +197,13 @@ export class ObservableComponent implements OnInit {
 // An Observable only emits values based on its internal logic (like data from an http call). it cannot accept external updates after it's created.
 
 // A subject allows you to push new values externally at any time using the next method.
+
+
+
+// Term                        	What it really means
+// observable.subscribe()	      This is how subscribers consume data. The observable doesn’t consume — the subscriber does.
+// Observable	                  Can only produce data (via the function inside its constructor).
+// Subject	                      Can both produce (via .next()) and consume (because it’s also an Observer).
 
 
 

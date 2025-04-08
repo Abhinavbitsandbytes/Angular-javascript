@@ -1,1 +1,9 @@
-<app-wh2 [parentData]="data" (btnClick)="childHandler($event)"></app-wh2>
+
+
+<input type="text" [formControl]="searchControl" placeholder="search" />
+
+<ul>
+    <li (click)="handleClick(item)" *ngFor="let item of filteredList; let i = index; trackBy: filterTrackby">
+        {{item}}
+    </li>
+</ul>

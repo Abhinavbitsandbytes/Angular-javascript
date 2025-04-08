@@ -1,3 +1,14 @@
-{{parentData}}
+<ul>
+    <li *ngFor="let item of data">
 
-<button (click)="handleClick()">child btn</button>
+      <span (click)="handleFolderClick(item.name)" *ngIf="item.type==='folder'">  {{item.name}} </span>
+      <span *ngIf="item.type==='file'">  {{item.name}} </span>
+
+    <ul *ngIf="item.type==='folder' && expanded[item.name]">
+        <app-wh2 [data]="item.children"></app-wh2>
+
+    </ul>
+
+</li>
+
+</ul>

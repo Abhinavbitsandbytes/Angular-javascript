@@ -23,7 +23,6 @@ export class TypeaheadComponent implements OnInit {
   
   // Flag to determine which init method to use
   useComplexInit: boolean = false;
-
   ngOnInit() {
     this.initialize(); // Call the initialization method
   }

@@ -27,3 +27,11 @@ export class ConcatMapComponent implements OnInit {
     })
   }
 }
+
+//merge map dont preserve order
+
+// Both mergeMap and concatMap propagate errors by default.
+
+// If any inner observable (like an API call) errors out, the entire stream is terminated, and the subscribe block’s error callback is triggered.
+
+// By default, if any inner observable (like an API call) fails inside mergeMap, concatMap, switchMap, or forkJoin, the entire RxJS stream errors out, and control jumps to the .subscribe({ error }) block.
