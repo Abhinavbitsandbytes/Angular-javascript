@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { observable, Observable, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-observable',
@@ -52,7 +52,30 @@ export class ObservableComponent implements OnInit {
 
 // To produce data: .next()
 // To consume data: .subscribe()
-// -----------------------------2-------------------------
+
+
+// observable
+
+// const obs$ = new Observable(observer => {
+//   observer.next('Hello'); // Only defined inside the observable
+// });
+// obs$.subscribe(data => console.log(data));
+// ✅ You can subscribe and get data.
+
+// ❌ But you can't do this:
+// obs$.next('Hello'); // ❌ Error! Observable doesn't have next()
+
+// subject
+
+// const subject = new Subject<string>();
+// // ✅ Acts as consumer — you push data into it
+// subject.next('Hello');
+
+// // ✅ Acts as provider — others can subscribe to it
+// subject.subscribe(data => console.log(data));
+// ✔️ You can emit data (consume input)
+// ✔️ You can subscribe to it (provide output)
+// -----------------------------2-------------------------------
 
 // Observables are cold. They only emit the data when there is a subscriber.
 // getObservableData(){
@@ -127,8 +150,6 @@ export class ObservableComponent implements OnInit {
 // }
 
 // You will get same data in subjectData1 and subjectData2
-
-
 
 
 

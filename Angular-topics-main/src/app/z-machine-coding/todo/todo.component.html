@@ -1,0 +1,13 @@
+<h2>To-Do App (Reactive Form with ID in form)</h2>
+
+<form [formGroup]="todoForm" (ngSubmit)="onSubmitForm()">
+  <input formControlName="title" placeholder="Enter task" />
+  <button type="submit">{{ todoForm.value.id ? 'Update' : 'Add' }}</button>
+</form>
+<ul>
+  <li *ngFor="let todo of todos">
+    {{ todo.title }}
+    <button (click)="editTodo(todo)">Edit</button>
+    <button (click)="deleteTodo(todo.id)">Delete</button>
+  </li>
+</ul>

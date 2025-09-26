@@ -45,6 +45,9 @@ import { ProgressBarComponent } from './z-machine-coding/progress-bar/progress-b
 import { DarkThemeComponent } from './z-machine-coding/dark-theme/dark-theme.component';
 import { ParentPaginationComponent } from './z-machine-coding/pagination/parent-pagination/parent-pagination.component';
 import { PaginationComponent } from './z-machine-coding/pagination/pagination/pagination.component';
+import { CdParentComponent } from './change-detection/cd-parent/cd-parent.component';
+import { CdChildComponent } from './change-detection/cd-child/cd-child.component';
+import { TodoComponent } from './z-machine-coding/todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -87,7 +90,10 @@ import { PaginationComponent } from './z-machine-coding/pagination/pagination/pa
     ProgressBarComponent,
     DarkThemeComponent,
     ParentPaginationComponent,
-    PaginationComponent
+    PaginationComponent,
+    CdParentComponent,
+    CdChildComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,

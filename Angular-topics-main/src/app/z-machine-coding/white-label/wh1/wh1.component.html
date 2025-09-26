@@ -1,9 +1,4 @@
 
 
-<input type="text" [formControl]="searchControl" placeholder="search" />
-
-<ul>
-    <li (click)="handleClick(item)" *ngFor="let item of filteredList; let i = index; trackBy: filterTrackby">
-        {{item}}
-    </li>
-</ul>
+<button (click)="change()">click</button>
+<app-wh2></app-wh2>

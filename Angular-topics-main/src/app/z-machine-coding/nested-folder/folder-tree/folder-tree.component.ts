@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FileNode } from '../nested-folder-parent/nested-folder-parent.component';
 
 @Component({
   selector: 'app-folder-tree',
@@ -6,17 +7,15 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./folder-tree.component.css']
 })
 export class FolderTreeComponent implements OnInit {
-  @Input() data: any[] = [];  // Accepts folder structure as input
-  expanded: any = {}; // Track expanded folders
-
-  toggle(folderName: string) {
-    this.expanded[folderName] = !this.expanded[folderName]; // Toggle open/close
-    console.log(this.expanded)
-  }
-
-  constructor() { }
-
+    dataStatus: any = {};
+    @Input() data!: FileNode[];
+    constructor() { }
   ngOnInit(): void {
+  }
+  
+  handleClick(id: string){
+    this.dataStatus[id]=!this.dataStatus[id];
+
   }
 
 }

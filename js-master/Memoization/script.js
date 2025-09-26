@@ -6,7 +6,6 @@ acc=acc+i;
 }
 return acc;
 }
-
 function memoize(fn){
     let cache = {};
     return function(...args){
@@ -22,7 +21,7 @@ function memoize(fn){
     }
 }
 }
-const memoized = memoize(sum)
+const memoized = memoize(sum);
 // memoized(5)
 
 

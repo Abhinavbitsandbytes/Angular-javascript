@@ -1,10 +1,82 @@
-1- All polyfills (call, bind, apply, promises)
-2- Custom Deep copy
-3- Object compare
-4- Learn typescript - https://www.youtube.com/watch?v=30LWjhZzg50&t=15769s
-5- CSS media querry
+docComparision
+Object compare
+LRU
+event emitter
+virtual scroll angular
+generator function
+
+https://alphaayush.notion.site/2e13395deff94a428d45b3aa88dc7ee7?v=06b5c5617b8442bc878bd210257786ad&p=e3f569baec6a4cde859eda2c827081af&pm=s
+
+
+Scenario — Design a Real-Time Notification Widget for Paytm
+
+They evaluated me on:
+
+API Design: Should I use Polling, WebSocket, or Server-Sent Events? What are the trade-offs?
+State Management: Redux Toolkit, Context API, or React Query?
+Performance: How to handle 10K+ notifications, support pagination, infinite scroll, caching?
+Accessibility: How would a screen reader announce "5 new notifications"?
+Scalability: What if millions of users receive notifications simultaneously?
+👉 This round had no coding. It tested architecture decisions, product thinking, and how I balance performance, user experience, and scalability.
+
+
+-----------
+
+You want me to implement a read function that takes:
+
+A nested object (obj in your example).
+
+A string path like "A.B.C.D.E".
+
+The function should traverse the object along that path and:
+
+Return the value if it exists (2 in this case).
+
+Return undefined if the path is invalid or doesn’t exist.
+
+For example:
+
+read(obj, "A.B.C.D.E"); // → 2
+read(obj, "A.B.X.Y");   // → undefined
+
+
+function read(obj, path) {
+  if (!obj || typeof path !== "string" || !path) return undefined;
+
+  const keys = path.split(".");
+  let current = obj;
+
+  for (let key of keys) {
+    if (current && Object.prototype.hasOwnProperty.call(current, key)) {
+      current = current[key];
+    } else {
+      return undefined;
+    }
+  }
+
+  return current;
+}
+
+// Example usage:
+const obj = {
+  A: {
+    B: {
+      C: {
+        D: {
+          E: 2,
+        },
+      },
+    },
+  },
+};
+
+console.log(read(obj, "A.B.C.D.E")); // 2
+console.log(read(obj, "A.B.C.X"));   // undefined
+console.log(read(obj, ""));          // undefined
+console.log(read(null, "A.B.C"));    // undefined
+
+
+Create a circle in html.
 
 
 
-DSA
-System design

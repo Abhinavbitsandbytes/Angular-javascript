@@ -176,4 +176,103 @@ greetMsg.catch((val)=>{
 // });
 
 
+// ------------------------------------
+
+// MindBlowing difference between promise and async await
+
+function  myPromise(){
+    return new Promise((res, rej)=>{
+        setTimeout(()=>{
+            res("hello");
+        }, 2000)
+    })
+}
+
+
+
+for(let i=0; i<5; i++){
+    myPromise().then((res)=>{
+        console.log(res)
+    })
+}
+
+// output - hellow will be printed 5 (5 hellow) times after 2 minutes.
+
+// ---async await----
+
+function  myPromise(){
+    return new Promise((res, rej)=>{
+        setTimeout(()=>{
+            res("hello");
+        }, 2000)
+    })
+}
+
+async function run() {
+    for(let i=0; i<5; i++){
+        const res = await myPromise();
+        console.log(res);
+      }
+}
+run()
+// ------------------------------------------------------------
+
+// second concept
+function temp(){
+    return "hello"
+}
+
+temp().then((res)=>{
+    console.log(res)
+})
+
+// error - script.js:44 Uncaught TypeError: temp(...).then is not a function
+
+async function temp(){
+    return "hello"
+}
+
+temp().then((res)=>{
+    console.log(res)
+})
+
+//output - hello
+
+
+// --------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// output - for 2 second nothing will be printed, then hellow, then again nothing for 2 second, then one more hellow....5 times
+// it means that i in for loop will not wait in promise but will wait in async await.
+
+// -----------------------------------------------------------------------------------
+
+
+
+// I have an array of 10 string-based IDs like this:
+// const ids = ["1", "2", "3", ..., "10"];
+
+// I want to call an asynchronous function fetchById(id) for each ID, and I want to implement three different strategies for how the calls are made:
+
+// Parallel Execution: Call fetchById(id) for all IDs at once and wait for all responses.
+
+// Sequential Execution: Call fetchById(id) one after another, starting the next only after the previous one finishes.
+
+// Batch Execution: Call fetchById(id) in batches (e.g., 3 at a time). Wait for one batch to complete before starting the next.
+
+// Please write clean, modular, and easy-to-understand functions for each strategy.
+
 

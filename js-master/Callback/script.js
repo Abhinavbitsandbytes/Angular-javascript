@@ -13,7 +13,6 @@ function getPost() {
         console.log(posts);
     }, 500);
 }
-
 createPost('post3', getPost);
 
 

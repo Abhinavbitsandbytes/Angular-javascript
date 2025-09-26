@@ -1,3 +1,16 @@
+// forEach
+// map
+// filter
+// find
+// findIndex
+// reduce
+// call bind apply
+// DeepCopy
+// groupBy - to do
+// promise
+
+
+
 
 // 1 - forEach
 {
@@ -55,6 +68,16 @@ Array.prototype.myForEach = function(callback) {
         }
     }
 };
+
+// In Arrays: What does i in arr check?
+// It checks whether the index i actually exists in the array — i.e., it’s not a hole.
+let arr = [];
+arr[2] = 'hello';
+
+console.log(0 in arr); // false (hole)
+console.log(1 in arr); // false (hole)
+console.log(2 in arr); // true  (value exists)
+console.log(3 in arr); // false (out of bounds)
 
 // --------------------
 
@@ -125,6 +148,17 @@ Array.prototype.myMap = function(callback, thisArg) {
 // --------------------------------------------------
 // filter
 {
+
+    // basic
+    // Array.prototype.myFilter = function(cb){
+    //     let arr=[];
+    //     for(let i=0; i<this.length; i++){
+    //         if(cb(this[i]))
+    //         arr.push(this[i]);
+    //     }
+    //     return arr
+    
+    // }
 
 Array.prototype.myFilter = function (callback, thisArg) {
     if (typeof callback !== 'function') {
@@ -197,6 +231,11 @@ Array.prototype.myFindIndex = function(callback, thisArg) {
 // or skipping callback validation,
 
 Array.prototype.myReduce = function(callback, initialValue) {
+
+    if (this.length === 0 && initialValue === undefined) {
+        throw new TypeError("Reduce of empty array with no initial value");
+    }
+
     let acc = initialValue;
     let startIndex = 0;
 
@@ -265,12 +304,13 @@ printAge.call(person3, 29);
 
 Function.prototype.myCall = function(obj, ...args){
     if(typeof this !== "function"){
-        throw new error("not callable");
+        throw new Error("not callable");
     }
-    obj.fn = this;
-    obj.fn(...args)
+    obj.fn = this; // Attach the function to the given object
+    const result = obj.fn(...args); // Call the function with the provided arguments
+    delete obj.fn; // Clean up by deleting the temporary function property
+    return result; // Return the result of the function call
 }
-
 }
 
 // ---------------------------------------------------
@@ -279,15 +319,16 @@ Function.prototype.myCall = function(obj, ...args){
 {
 Function.prototype.myApply = function(obj, ...args){
     if(typeof this !== 'function'){
-        throw new error("not callable");
+        throw new Error("not callable");
     }
     if(!Array.isArray(...args)){
         throw new error("wrong");
     }
-    obj.fn=this;
-    obj.fn(...args)
+    obj.fn = this; // Attach the function to the given object
+    const result = obj.fn(...args); // Call the function with the provided arguments
+    delete obj.fn; // Clean up by deleting the temporary function property
+    return result; // Return the result of the function call
 }
-
 }
 
 // --------------------------------------------
@@ -296,10 +337,12 @@ Function.prototype.myApply = function(obj, ...args){
 {
 Function.prototype.myBind = function(obj, ...args1){
     if(typeof this !== 'function'){
-        throw new error("not callable");
+        throw new Error("not callable");
     }
     obj.fn=this;
+    return function(...args2){
     obj.fn(...args1, ...args2)
+    }
 }
 
 let newFn = printAge.bind(person1);  //band can take argument which will be captured in ...args1

@@ -5,6 +5,22 @@
         <option value="" disabled>Select Role</option>
         <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
       </select>
+
+      <div>
+      <label>
+        <input type="radio" formControlName="level" value="beginner" />
+        Beginner
+      </label>
+      <label>
+        <input type="radio" formControlName="level" value="intermediate" />
+        Intermediate
+      </label>
+      <label>
+        <input type="radio" formControlName="level" value="advanced" />
+        Advanced
+      </label>
+    </div>
+
         <div class="form-check">
         <input formControlName="agreeTerms" type="checkbox" class="form-check-input" />
         <label class="form-check-label">I agree to the terms and conditions</label>

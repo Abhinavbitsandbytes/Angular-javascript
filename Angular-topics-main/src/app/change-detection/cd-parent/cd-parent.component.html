@@ -1,0 +1,5 @@
+<button (click)="changeValue()">Change Value in Parent</button>
+{{parentData | json}}
+
+<h1>below is child</h1>
+<app-cd-child [parentData]="parentData"></app-cd-child>

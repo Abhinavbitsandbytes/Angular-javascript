@@ -1,23 +1,16 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-
-
+import { Component, DoCheck, ChangeDetectionStrategy } from '@angular/core';
 @Component({
   selector: 'app-wh2',
   templateUrl: './wh2.component.html',
-  styleUrls: ['./wh2.component.css']
+  styleUrls: ['./wh2.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class Wh2Component implements OnInit {
-  @Input() data: any
-  expanded: any = {};
-  constructor() { }
-ngOnInit(): void {
+export class Wh2Component implements DoCheck  {
 
-  
-}
-
-handleFolderClick(folder: any){
-  this.expanded[folder]=!this.expanded[folder]
+ngonInit(){
 
 }
-
+ngDoCheck(){
+console.log('hey')
+}
 }

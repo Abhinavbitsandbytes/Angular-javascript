@@ -84,3 +84,28 @@ export class MydirectiveDirective {
 // <p>dir-component  
 //   <span appMydirective="lightblue" hoverColor="orange" clickColor="red">Hover or Click Me!</span>
 // </p>
+
+
+
+
+// --------------------------------------------------------
+
+//  you can use EventEmitter in an Angular directive, and it's a common pattern 
+// when you want the directive to communicate with the parent component
+//  (usually to notify that something has happened inside the directive).
+
+// Imagine you want to build a reusable directive that detects when an element enters the viewport (i.e., lazy loading, analytics, etc.):
+
+// @Directive({
+//   selector: '[appInViewport]'
+// })
+// export class InViewportDirective {
+//   @Output() visible = new EventEmitter<boolean>();
+
+//   constructor(private el: ElementRef) {
+//     const observer = new IntersectionObserver(([entry]) => {
+//       this.visible.emit(entry.isIntersecting);
+//     });
+//     observer.observe(this.el.nativeElement);
+//   }
+// }

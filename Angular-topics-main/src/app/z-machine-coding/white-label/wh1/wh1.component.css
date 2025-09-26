@@ -1,3 +1,11 @@
-.myfilled {
-    color: gold;
-  }
+.card{
+  width: 200px;
+  height: 200px;
+  background-color: var(--card-bg);
+  color: var(--btn-text);
+}
+
+.btn{
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+}

@@ -1,0 +1,62 @@
+Regular revision
+
+Prototype inheritance
+Object.create and Object.assign
+split and splice, indexOf
+js coding - specially flatten
+polyfills
+map
+Solid principle
+output questions
+spread vs rest  (doc 3)
+
+Angular
+
+ngrx (forkjoin, mergemap, concatmap, switchmap)
+MFE
+Multilanguage
+theming
+service data sharing syntax
+diff between subject and observable
+form and service syntax - I know them well
+Angular lifecycle
+ng-content
+route guard
+custom directives
+ngclass, ngstyle syntax
+typeahead debouncing syntax
+change detection
+security
+access/refresh token - doc 2
+pipe
+test cases
+
+
+
+pwa
+service worker
+zone.js
+
+pure syntax
+
+1 - <span *ngFor="let item of [].constructor(5)"> </span>
+2- (mouseover)
+(mouseleave)
+3- [ngclass], [ngstyle] are objects "{}"
+
+
+
+Attention on
+Test cases - during office
+pipes - today
+login flow
+
+
+
+
+
+
+-----------------------------
+
+
+

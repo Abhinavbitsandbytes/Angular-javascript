@@ -32,12 +32,13 @@ export class ImpurePipeCompComponent implements OnInit {
   ]
 
   addProduct(){
-    this.productArr.push({
+    const item = [{
       'sNo': 3,
       'name': 'New',
       price: 777,
       'availability': 'available'
-    })
+    }]
+    this.productArr = [...this.productArr, ...item ]
     console.log(this.productArr)
   }
 
