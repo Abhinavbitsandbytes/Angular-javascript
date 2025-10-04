@@ -11,14 +11,18 @@ Image Carousel  - D
 Tabs component
 Infinite Scrolling
 
-
-
-
 stop watch 
 chess board with diagonal highlight
 
-
-
 nested comments
 nested checkbox
+
+Snake ladder game (only grid from 1 to 100)
+Auto collapsible accordian
+Config driven forms
+
+https://devtools.tech/questions/all?searchTerm=html
+
+
+
 

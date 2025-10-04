@@ -11,11 +11,46 @@
 
 
 
+// let arr = [3,1,8,4,5]
+// Array.prototype.myForEach = function(cb){
+//   for(let i=0; i<this.length; i++){
+//     cb(this[i], i, this);
+//   }
+// }
+
+// arr.myForEach((item, i) => {
+//   console.log(item * 3);
+// })
+
+
+// 1 - You call:
+// arr.myForEach((item, i) => { console.log(item * 3) })
+
+// 👉 cb = (item, i) => console.log(item * 3)
+
+// 2 - Inside myForEach, you loop through arr.
+
+// At i=0 → cb(3, 0, arr)
+
+// At i=1 → cb(1, 1, arr)
+
+// At i=2 → cb(8, 2, arr)
+// … and so on.
+
+// 3 - Each time, the callback gets three arguments:
+
+// this[i] → element
+
+// i → index
+
+// this → whole array
+
 
 // 1 - forEach
 {
 
 // Good-------------------------------------------------------------------
+
 Array.prototype.myForEach = function(cb) {
     for (let i = 0; i < this.length; i++) {
         cb(this[i], i, this);
@@ -131,19 +166,90 @@ Array.prototype.myMap = function(callback, thisArg) {
     if (typeof callback !== 'function') {
         throw new TypeError(callback + ' is not a function');
     }
-
     let result = [];
-
     for (let i = 0; i < this.length; i++) {
         if (i in this) { // skips holes
-            result[i] = callback.call(thisArg, this[i], i, this);
+            result[i] = callback.call(thisArg, this[i], i, this);    // func.call(this, arg1, arg2, arg3, ...);
         }
     }
-
     return result;
 };
 
+// uses
+let numbers = [1, 2, 3, 4];
+// Using your polyfill
+let doubled = numbers.myMap(function(num) {
+  return num * 2;
+});
+console.log(doubled); // [2, 4, 6, 8]
+// With arrow function
+let squared = numbers.myMap((num, index) => {
+  return num * num + index; // also gets index
+});
+console.log(squared); // [1, 5, 11, 19]
+// Using thisArg
+let multiplier = {
+  factor: 3
+};
+let multiplied = numbers.myMap(function(num) {
+  return num * this.factor;  // 'this' is bound to multiplier
+}, multiplier);  // multiplier - thisArgs
+console.log(multiplied); // [3, 6, 9, 12]
+// -------------
 
+// Example with arrow functions 🚨
+// let nums = [1, 2, 3];
+// let multiplier = { factor: 5 };
+
+// let multiplied = nums.myMap((num) => {
+//   return num * this.factor;
+// }, multiplier);
+
+// console.log(multiplied); // [NaN, NaN, NaN]
+
+// Why?
+// Because arrow functions don’t have their own this — they use the this from the outer scope, so thisArg has no effect here.
+
+// That’s why thisArg only makes sense with regular functions.
+
+// ✅ In summary:
+
+// thisArg lets you control what this means inside the callback.
+
+// If you don’t pass it, this will be undefined (strict mode) or window/global (non-strict).
+
+// With arrow functions, thisArg is ignored.
+
+// ---------------------------
+
+
+
+Array.prototype.myMap = function(callback, thisArg) {
+  if (typeof callback !== "function") {
+    throw new TypeError(callback + " is not a function");
+  }
+  let result = new Array(this.length);
+  for (let i = 0; i < this.length; i++) {
+    if (i in this) { // skip holes in sparse arrays
+      // callback gets: element, index, array
+      result[i] = callback.call(thisArg, this[i], i, this);
+    }
+  }
+  return result;
+};
+
+// Usage examples:
+let numbers2 = [1, 2, 3, 4];
+let doubled2 = numbers2.myMap(function(element, index, array) {
+  console.log("this ->", this);        // shows thisArg if passed
+  console.log("element ->", element);  // current value
+  console.log("index ->", index);      // index
+  console.log("array ->", array);      // original array
+  console.log("----------");
+  return element * 2;
+}, { name: "CustomThis" }); // <-- thisArg
+
+console.log("Final result:", doubled2);
 }
 // --------------------------------------------------
 // filter
@@ -157,16 +263,13 @@ Array.prototype.myMap = function(callback, thisArg) {
     //         arr.push(this[i]);
     //     }
     //     return arr
-    
     // }
 
 Array.prototype.myFilter = function (callback, thisArg) {
     if (typeof callback !== 'function') {
         throw new TypeError(callback + ' is not a function');
     }
-
     let result = [];
-
     for (let i = 0; i < this.length; i++) {
         if (i in this) { // Skip holes
             if (callback.call(thisArg, this[i], i, this)) {
@@ -174,10 +277,8 @@ Array.prototype.myFilter = function (callback, thisArg) {
             }
         }
     }
-
     return result;
 };
-
 }
 // -----------------------------------------------------------
 // find
@@ -200,7 +301,7 @@ Array.prototype.myFind = function(callback, thisArg) {
 };
 
 }
-// ----------------------------------------
+// ----------------------------------------------
 // findIndex
 {
 
@@ -208,7 +309,6 @@ Array.prototype.myFindIndex = function(callback, thisArg) {
     if (typeof callback !== 'function') {
         throw new TypeError(callback + ' is not a function');
     }
-
     for (let i = 0; i < this.length; i++) {
         if (i in this) { // Skip holes
             if (callback.call(thisArg, this[i], i, this)) {
@@ -216,7 +316,6 @@ Array.prototype.myFindIndex = function(callback, thisArg) {
             }
         }
     }
-
     return -1; // If nothing matched
 };
 
@@ -231,27 +330,21 @@ Array.prototype.myFindIndex = function(callback, thisArg) {
 // or skipping callback validation,
 
 Array.prototype.myReduce = function(callback, initialValue) {
-
     if (this.length === 0 && initialValue === undefined) {
         throw new TypeError("Reduce of empty array with no initial value");
     }
-
     let acc = initialValue;
     let startIndex = 0;
-
     // If no initialValue, use the first element
     if (acc === undefined) {
         acc = this[0];
         startIndex = 1;
     }
-
     for (let i = startIndex; i < this.length; i++) {
         acc = callback(acc, this[i], i, this);
     }
-
     return acc;
 };
-
 }
 
 // call
@@ -265,37 +358,27 @@ let person1={
         console.log(this.name + "is" + age + "years old" )
     }
 }
-
 person1.printAge(29);
-
 // but lets suppose we have another object
-
 let person2={
     name: "Ranu",
     printAge: function(age){
         console.log(this.name + "is" + age + "years old" )
     }
 }
-
 // again we are duplicating printAge method
-
 // solution? write function outside and borrow'
-
 let person3={
     name: "Abhi",
 }
 let person4={
     name:"Ranu"
 }
-
 function printAge(age){
     console.log(this.name + "is" + age + "years old" )
 }
-
 printAge.call(person3, 29);
-
 // -------------------------------------------------------
-
 }
 
 // call
@@ -349,6 +432,75 @@ let newFn = printAge.bind(person1);  //band can take argument which will be capt
 newFn(25)   // newFn can take argument which willl be captured in ...args2
 
 }
+
+
+// ------------------------------------------------------------------------
+
+// GroupBy
+
+
+// -------------------------------------------------------------
+// Polyfill for Array.prototype.groupBy
+// -------------------------------------------------------------
+// Syntax: 
+//   arr.groupBy(callbackFn)
+//
+// Example:
+//   [6.1, 4.2, 6.3].groupBy(Math.floor)
+//   => { '6': [6.1, 6.3], '4': [4.2] }
+//
+//   ['one', 'two', 'three'].groupBy(str => str.length)
+//   => { '3': ['one', 'two'], '5': ['three'] }
+//
+// Notes:
+// - callbackFn is called with (element, index, array)
+// - Result is an object where keys are stringified group identifiers
+// -------------------------------------------------------------
+
+if (!Array.prototype.myGroupBy) {
+  Array.prototype.myGroupBy = function(callback, thisArg) {
+    if (typeof callback !== 'function') {
+      throw new TypeError(callback + ' is not a function');
+    }
+
+    let result = {};
+
+    for (let i = 0; i < this.length; i++) {
+      if (i in this) { // skip sparse array holes
+        // Execute callback for current element
+        let key = callback.call(thisArg, this[i], i, this);
+
+        // Convert key to string (object keys are strings/symbols only)
+        key = String(key);
+
+        // Initialize group if it doesn't exist
+        if (!result[key]) {
+          result[key] = [];
+        }
+
+        // Push element into the correct group
+        result[key].push(this[i]);
+      }
+    }
+
+    return result;
+  };
+}
+
+// -------------------------------------------------------------
+// Usage examples
+// -------------------------------------------------------------
+
+let numbers = [6.1, 4.2, 6.3];
+console.log(numbers.myGroupBy(Math.floor));
+// Output: { '6': [ 6.1, 6.3 ], '4': [ 4.2 ] }
+
+let words = ['one', 'two', 'three', 'four', 'five'];
+console.log(words.myGroupBy(word => word.length));
+// Output: { '3': [ 'one', 'two' ], '5': [ 'three' 'seven'], '4': [ 'four', 'five' ] }
+
+
+
 
 // -------------------------------------------------------------------------
 

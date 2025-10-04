@@ -5,6 +5,125 @@ array.reduce(callbackFn, initialValue)
 // currentValue will be the second element
 // This means reduce() will skip the first element in the loop because it's used as the initial accumulator
 
+// const numbers = [6, 5, 9, 4, 8]; 
+// const sum = numbers.reduce((acc, curr) => acc + curr);
+// console.log(sum);
+
+// Initial Setup
+
+// numbers = [6, 5, 9, 4, 8]
+
+// reduce called without initial value.
+// 👉 So:
+
+// acc = first element = 6
+
+// Iteration starts from the second element (5).
+
+// Iterations
+// Iteration 1 (index 1)
+
+// acc = 6
+
+// curr = 5
+
+// Compute: 6 + 5 = 11
+
+// New acc = 11
+
+// Iteration 2 (index 2)
+
+// acc = 11
+
+// curr = 9
+
+// Compute: 11 + 9 = 20
+
+// New acc = 20
+
+// Iteration 3 (index 3)
+
+// acc = 20
+
+// curr = 4
+
+// Compute: 20 + 4 = 24
+
+// New acc = 24
+
+// Iteration 4 (index 4)
+
+// acc = 24
+
+// curr = 8
+
+// Compute: 24 + 8 = 32
+
+// New acc = 32
+
+// ----------------------------------------------
+
+// const numbers = [6, 5, 9, 4, 8]; 
+// const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+// console.log(sum);
+// Initial Setup
+// numbers = [6, 5, 9, 4, 8]
+
+// reduce called with initial value = 0
+// 👉 So:
+
+// acc = 0 initially
+
+// Iteration starts from the first element (6), not the second.
+
+// Iterations
+// Iteration 1 (index 0)
+// acc = 0
+
+// curr = 6
+
+// Compute: 0 + 6 = 6
+
+// New acc = 6
+
+// Iteration 2 (index 1)
+// acc = 6
+
+// curr = 5
+
+// Compute: 6 + 5 = 11
+
+// New acc = 11
+
+// Iteration 3 (index 2)
+// acc = 11
+
+// curr = 9
+
+// Compute: 11 + 9 = 20
+
+// New acc = 20
+
+// Iteration 4 (index 3)
+// acc = 20
+
+// curr = 4
+
+// Compute: 20 + 4 = 24
+
+// New acc = 24
+
+// Iteration 5 (index 4)
+// acc = 24
+
+// curr = 8
+
+// Compute: 24 + 8 = 32
+
+// New acc = 32
+
+// --------------------------------------------
+
 
 
 // Sum of array elements
@@ -197,6 +316,9 @@ arrr.reduce((acc, curr) => {
 
 
 
+// https://www.youtube.com/watch?v=s1XVfm5mIuU
+// https://medium.com/@stheodorejohn/deep-dive-into-the-reduce-function-with-practical-examples-20161e3af11b
+// https://www.devoreur2code.com/blog/javascript-reduce-method
 
 
 
